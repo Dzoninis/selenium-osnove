@@ -15,7 +15,7 @@ public class SaucedemoTests extends BasicTests {
                 "Current url should be 'https://www.saucedemo.com/cart.html' ");
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     public void verifyTitleNameForCartPage() {
         inventoryPage.clicOnAddToCart();
         topNavPage.clickOnShoppingCart();
@@ -23,19 +23,23 @@ public class SaucedemoTests extends BasicTests {
                 "Title page is not correct");
     }
 
-    @Test (priority = 3)
+    @Test(priority = 3)
     public void verifyHeaderNameForCartPage() {
-        inventoryPage.clicOnAddToCart();
         topNavPage.clickOnShoppingCart();
         Assert.assertEquals(cartPage.getHeaderTitle(), "Swag Labs",
                 "Title page is not correct");
     }
 
-    @Test (priority = 4)
+    @Test(priority = 4)
     public void verifyIfTheHamburgerMenuButtonIsPresented() {
-        inventoryPage.clicOnAddToCart();
         topNavPage.clickOnShoppingCart();
         Assert.assertTrue(topNavPage.isElementPresented(), "Hamburger menu is NOT presented");
+    }
+
+    @Test(priority = 5)
+    public void verifyIfTheCartIconIsPresented() {
+        topNavPage.clickOnShoppingCart();
+        Assert.assertTrue(topNavPage.isCartIconPresented(), "Cart icon is NOT presented");
     }
 
 }
