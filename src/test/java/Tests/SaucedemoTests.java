@@ -42,4 +42,11 @@ public class SaucedemoTests extends BasicTests {
         Assert.assertTrue(topNavPage.isCartIconPresented(), "Cart icon is NOT presented");
     }
 
+    @Test(priority = 6)
+    public void ifTheHamburgerMenuButtonIsEnabled() {
+        topNavPage.clickOnShoppingCart();
+        topNavPage.clickOnBurgerMenu();
+        Assert.assertTrue(topNavPage.isNavigationMenuOpened(), "Hamburger menu buttons is not functional");
+    }
+
 }
