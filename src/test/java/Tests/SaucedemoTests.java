@@ -14,4 +14,16 @@ public class SaucedemoTests extends BasicTests {
                 baseUrl + "cart.html",
                 "Current url should be 'https://www.saucedemo.com/cart.html' ");
     }
+
+    @Test (priority = 2)
+    public void verifyTitleNameForCartPage() {
+        inventoryPage.clicOnAddToCart();
+        topNavPage.clickOnShoppingCart();
+        Assert.assertEquals(driver.getTitle(), "Swag Labs",
+                "Title page is not correct");
+    }
+
+
+
+
 }
