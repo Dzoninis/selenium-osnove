@@ -23,7 +23,12 @@ public class SaucedemoTests extends BasicTests {
                 "Title page is not correct");
     }
 
-
-
+    @Test (priority = 3)
+    public void verifyHeaderNameForCartPage() {
+        inventoryPage.clicOnAddToCart();
+        topNavPage.clickOnShoppingCart();
+        Assert.assertEquals(cartPage.getHeaderTitle(), "Swag Labs",
+                "Title page is not correct");
+    }
 
 }
