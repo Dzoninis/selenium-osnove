@@ -31,4 +31,11 @@ public class SaucedemoTests extends BasicTests {
                 "Title page is not correct");
     }
 
+    @Test (priority = 4)
+    public void verifyIfTheHamburgerMenuButtonIsPresented() {
+        inventoryPage.clicOnAddToCart();
+        topNavPage.clickOnShoppingCart();
+        Assert.assertTrue(topNavPage.isElementPresented(), "Hamburger menu is NOT presented");
+    }
+
 }
